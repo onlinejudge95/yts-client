@@ -34,7 +34,7 @@ class MoviesClient:
     ):
         if not isinstance(limit, int):
             raise ValueError("limit should be an integer")
-        elif not limit in range(1, 51):
+        elif limit not in range(1, 51):
             raise ValueError("limit should be in [1,..,50]")
         else:
             self.payload["limit"] = limit
@@ -48,7 +48,7 @@ class MoviesClient:
 
         if not isinstance(quality, str):
             raise ValueError("quality should be a string")
-        elif not quality in ["720p", "1080p", "2160p", "3D", "All"]:
+        elif quality not in ["720p", "1080p", "2160p", "3D", "All"]:
             raise ValueError(
                 "quality should be in ['720p', '1080p', '2160p', '3D', 'All']"
             )
@@ -57,7 +57,7 @@ class MoviesClient:
 
         if not isinstance(minimum_rating, int):
             raise ValueError("minimum_rating should be an integer")
-        elif not page > 0:
+        elif not minimum_rating > 0:
             raise ValueError("minimum_rating should be in [0,..,9]")
         else:
             self.payload["minimum_rating"] = minimum_rating
@@ -74,7 +74,7 @@ class MoviesClient:
 
         if not isinstance(sort_by, str):
             raise ValueError("sort_by should be a string")
-        elif not sort_by in [
+        elif sort_by not in [
             "title",
             "year",
             "rating",
@@ -92,7 +92,7 @@ class MoviesClient:
 
         if not isinstance(order_by, str):
             raise ValueError("order_by should be a string")
-        elif not order_by in ["asc", "desc"]:
+        elif order_by not in ["asc", "desc"]:
             raise ValueError("order_by should be in ['asc', 'desc']")
         else:
             self.payload["order_by"] = order_by
