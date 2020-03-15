@@ -6,13 +6,13 @@ import requests
 class YTSClient:
     def __init__(self, host):
         self.base_url = f"https://{host}/api/v2"
-        self.movies = MoviesClient(self.base_url)
+        self.movies = MovieClient(self.base_url)
 
     def __str__(self):
         return f"<YTSClient dispatching to {self.base_url}>"
 
 
-class MoviesClient:
+class MovieClient:
     rule_book = {"limit": "in range(1, 51)"}
 
     def __init__(self, base_url):
