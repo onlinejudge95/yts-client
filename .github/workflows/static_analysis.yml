@@ -1,0 +1,21 @@
+name: "Static-Analysis"
+
+on: [push]
+
+jobs:
+  lint:
+    name: "Code linter"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v2"
+
+      - name: "Set up Python 3.7"
+        uses: "actions/setup-python@v1"
+        with:
+          python-version: 3.7
+
+      - name: "Install test dependencies"
+        run: pip install -r requirements/test.txt
+
+      - name: "Run black"
+        run: ./bin/black.sh
