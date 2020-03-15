@@ -1,0 +1,11 @@
+{
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "python.pythonPath": "env/bin/python3.8",
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--config",
+        "pyproject.toml"
+    ]
+}
