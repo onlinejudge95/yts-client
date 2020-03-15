@@ -18,7 +18,7 @@ jobs:
         run: pip install -r requirements/test.txt
 
       - name: "Run black"
-      run: ./bin/black.sh
+        run: ./bin/black.sh
 
       - name: "Run safety"
         run: ./bin/safety.sh
